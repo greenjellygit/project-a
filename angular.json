@@ -18,6 +18,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/project-a",
+            "resourcesOutputPath": "assets",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,6 +26,11 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@jelly/layout-lib/src/assets",
+                "output": "assets"
+              },
               "src/assets"
             ],
             "styles": [
@@ -33,6 +39,9 @@
             "scripts": []
           },
           "configurations": {
+            "dev": {
+              "tsConfig": "./tsconfig.dev.json"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -72,6 +81,9 @@
           "configurations": {
             "production": {
               "browserTarget": "project-a:build:production"
+            },
+            "dev": {
+              "browserTarget": "project-a:build:dev"
             }
           }
         },

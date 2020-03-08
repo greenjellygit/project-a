@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@jelly/layout-lib": [
+        "lib/projects/jelly/layout-lib/src"
+      ],
+      "@jelly/layout-lib/*": [
+        "lib/projects/jelly/layout-lib/src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ]
+}
